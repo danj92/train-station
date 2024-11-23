@@ -1,0 +1,23 @@
+<div class="autocomplete-container">
+    <div class="input-wrapper">
+      <div class="hint-wrapper">
+        <span class="transparent">{{ typedText }}</span>
+        <span class="hint">{{ remainingHint }}</span>
+      </div>
+  
+      <input
+        type="text"
+        [formControl]="searchInput"
+        (focus)="onFocus()"
+        (keydown)="onKeydown($event)"
+        class="input-with-overlay"
+      />
+    </div>
+  
+    <ul *ngIf="filteredSuggestions.length" class="dropdown">
+      <li *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion)">
+        {{ suggestion.stationName }}
+      </li>
+    </ul>
+  </div>
+  

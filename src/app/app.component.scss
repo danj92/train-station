@@ -1,0 +1,15 @@
+%centered {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  @extend %centered;
+  color: red;
+}
+
+.search {
+  @extend %centered;
+  font-size: 24px;
+  font-weight: bold;
+}
